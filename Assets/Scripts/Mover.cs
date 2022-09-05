@@ -26,7 +26,14 @@ public class Mover : MonoBehaviour
     #endregion
 
     #region Private Methods
+    private void MovePlayer()
+    {
+    float fltXValue = 0.02f;
+    float fltYValue = 0f;
+    float fltZValue = 0f;
 
+    transform.Translate(fltXVal, fltYVal, fltZVal);
+    }
     #endregion
 
     #region Public Methods
