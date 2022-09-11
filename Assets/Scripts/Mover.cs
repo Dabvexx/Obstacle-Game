@@ -20,7 +20,7 @@ public class Mover : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(fltXVal, fltYVal, fltZVal);
+        MovePlayer();
     }
 
     #endregion
@@ -28,11 +28,12 @@ public class Mover : MonoBehaviour
     #region Private Methods
     private void MovePlayer()
     {
-    float fltXValue = 0.02f;
-    float fltYValue = 0f;
-    float fltZValue = 0f;
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        // bool jumpInput = Input.GetButtonDown("Jump");
+        float jumpspeed = 5f;
+        float speed = 5f;
 
-    transform.Translate(fltXVal, fltYVal, fltZVal);
+        transform.Translate(input.x * speed * Time.deltaTime, 0, input.y * speed * Time.deltaTime);
     }
     #endregion
 
